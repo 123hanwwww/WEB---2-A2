@@ -1,0 +1,386 @@
+/* Charity Events Hub - global stylesheet
+   Requirements: 12pt Arial, 1.5 line-height, professional charity look,
+   responsive card layout. */
+
+:root {
+  --primary: #2e7d6b;      /* soft teal green */
+  --primary-dark: #1f5c4e;
+  --accent: #f4a261;       /* warm amber */
+  --bg: #f7f9f8;
+  --card-bg: #ffffff;
+  --text: #263238;
+  --muted: #607d8b;
+  --error: #c0392b;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* ---------- Header / navigation ---------- */
+.site-header {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brand {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #e8f0ee;
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-links a.active {
+  background-color: #fff;
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+/* ---------- Hero / welcome ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.hero .mission {
+  margin: 0.75rem 0;
+  max-width: 60ch;
+}
+
+.hero .contact {
+  margin-top: 1rem;
+}
+
+.hero .contact a {
+  color: #fff;
+}
+
+/* ---------- About ---------- */
+.about {
+  margin-bottom: 2rem;
+}
+
+/* ---------- Card grid ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.card-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.card-price {
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.card-link {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.badge.upcoming {
+  background-color: var(--primary);
+}
+
+.badge.past {
+  background-color: var(--muted);
+}
+
+/* ---------- Buttons / CTAs ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #3a2a14;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #e8914a;
+}
+
+.btn-secondary {
+  background-color: #e0e7e5;
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background-color: #cfd9d6;
+}
+
+/* ---------- Search form ---------- */
+.search-form {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1 1 180px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #ccd6d3;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Messages ---------- */
+.page-intro {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.loading,
+.empty {
+  color: var(--muted);
+  padding: 1rem 0;
+}
+
+.error {
+  color: var(--error);
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+/* ---------- Event detail ---------- */
+.event-detail {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+.detail-content {
+  padding: 1.75rem;
+}
+
+.detail-content h1 {
+  margin-top: 0.75rem;
+}
+
+.detail-meta {
+  margin: 0.3rem 0;
+}
+
+.detail-content h2 {
+  margin-top: 1.5rem;
+}
+
+.detail-content a {
+  color: var(--primary);
+}
+
+/* ---------- Progress bar ---------- */
+.progress {
+  width: 100%;
+  height: 22px;
+  background-color: #e0e7e5;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+#register-btn {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: #263238;
+  color: #cfd8dc;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  main {
+    padding: 1.25rem 1rem;
+  }
+}
