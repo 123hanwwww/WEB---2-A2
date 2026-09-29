@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Events - Charity Events Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Charity Events Hub</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html" class="active">Search Events</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-page">
+      <h1>Search Events</h1>
+      <p class="page-intro">Filter upcoming charity events by date, location and category.</p>
+
+      <form id="search-form" class="search-form">
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Sydney">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Search</button>
+          <button type="button" id="clear-btn" class="btn btn-secondary">Clear Filters</button>
+        </div>
+      </form>
+
+      <div id="results" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Charity Events Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/search.js"></script>
+</body>
+</html>
