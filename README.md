@@ -1,36 +1,3 @@
-# Charity Events Management Website
-
-A dynamic client–server website for browsing, searching and viewing charity
-events. Built for **PROG2002 Web Development II — Assignment 2**.
-
-## Technology Stack
-
-- **Backend:** Node.js, Express, MySQL (`mysql2`)
-- **Frontend:** HTML, CSS, JavaScript (DOM + `fetch` + Promises/`async-await`)
-- No frontend framework (Angular/React/Vue) is used, as required.
-
-## Project Structure
-
-```
-submission/
-├── api/
-│   ├── event_db.js               # MySQL connection
-│   ├── server.js                 # Express server + all API routes
-│   ├── package.json
-│   └── charityevents_db.sql      # Schema + seed data (import this into MySQL)
-├── clientside/
-│   ├── index.html                # Home page
-│   ├── search.html               # Search events page
-│   ├── event.html                # Event detail page
-│   ├── css/style.css
-│   └── js/
-│       ├── home.js
-│       ├── search.js
-│       └── event.js
-├── report/
-│   └── PROG2002_A2_Report.md
-└── README.md
-```
 
 ## Setup & Run
 
